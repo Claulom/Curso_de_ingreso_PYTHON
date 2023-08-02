@@ -22,7 +22,16 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        cantidad_numeros_pares = 0
+        numeros = prompt("", "Ingrese un número")
+        numeros_int = int(numeros)
+
+        for i in range(0, numeros_int, 2): #Utilizar un rango alto
+            cantidad_numeros_pares += 1
+            print("Los numeros pares son: ", i)
+              
+        print("","La cantidad de numeros total es:", str(cantidad_numeros_pares) )
+    
         
     
 if __name__ == "__main__":

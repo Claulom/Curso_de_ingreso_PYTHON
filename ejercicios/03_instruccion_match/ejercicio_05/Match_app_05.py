@@ -6,6 +6,8 @@ import customtkinter
 
 
 '''
+Nombre: Claudio
+Apellido: Lombao
 Enunciado:
 Obtener la hora ingresada en el txt_hora. Al presionar el botón ‘Informar’ 
 mostrar mediante alert el mensaje ‘Es de mañana’ 
@@ -30,7 +32,14 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
-        pass
+        hora = self.txt_hora.get()
+        hora_int= float(hora)
+        mensaje = ""
+        match hora_int:
+            case 7 | 8 | 9 | 10 | 11 :
+                mensaje += "Es de mañana"
+
+        alert("Hola",mensaje)
     
     
 if __name__ == "__main__":

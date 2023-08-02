@@ -24,7 +24,9 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        datos = self.lista_datos
+        for e in datos:
+            print(e)
         
         
     

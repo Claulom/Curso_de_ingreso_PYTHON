@@ -24,7 +24,11 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
+        numero_minimo = self.lista_datos[0]
+        for numero in self.lista_datos: #si hay un numero, en mi lista, que recorra
+            if numero < numero_minimo: #si ese numero es mayor al primer numero comparado, en este caso el index [0]
+                numero_minimo = numero #Que se cambie el numero por ese max.
+                alert("", "El numero minimo es:" + str(numero_minimo))
     
     
 if __name__ == "__main__":

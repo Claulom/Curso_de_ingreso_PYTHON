@@ -18,6 +18,7 @@ Luego calcular:
 
 Informar los resultados mediante alert()
 
+
 '''
 
 class App(customtkinter.CTk):
@@ -33,7 +34,42 @@ class App(customtkinter.CTk):
 
 
     def btn_comenzar_ingreso_on_click(self):
-        pass
+        mensaje = "Los valores ingresados son: "
+        cant_negativo = 0
+        cant_positivo = 0
+        suma_pos = 0
+        suma_neg = 0
+        ceros = 0
+       
+
+        while True:  
+            ingreso = prompt("Ingreso", "Ingrese un número")  
+            if ingreso == None or ingreso == "":
+                break
+            ingreso_int = int(ingreso)
+            if ingreso_int == 0:
+                ceros += 1 
+                mensaje 
+            elif ingreso_int < 0 :
+                    cant_negativo += 1
+                    suma_neg += ingreso_int
+                    mensaje 
+            else: 
+                ingreso_int > 0
+                cant_positivo += 1
+                suma_pos += ingreso_int
+                mensaje
+                        
+        
+        dif = cant_positivo - cant_negativo
+
+        if ingreso == None:
+            alert("", "Ingrese un valor")
+        else:
+            alert("", mensaje  + "\n" + "cantidad de Ceros, " + str(ceros)  + "\n" + " la cantidad de negativos, "  + str(cant_negativo) + "\n" + " la cantidad de positivos, "  + str(cant_positivo) + "\n" + " La suma de los valores negativos es: " + str(suma_neg) + "\n" + 
+            " La suma de los valores positivos es: " + str(suma_pos) + "\n" + "La diferencia entre cantidades de positivos y negativos es: " + str(dif))
+            
+        
 
     
 if __name__ == "__main__":

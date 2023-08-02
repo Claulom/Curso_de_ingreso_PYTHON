@@ -52,8 +52,56 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
-        pass
-            
+        estacion = self.combobox_estaciones.get()
+        destino = self.combobox_destino.get() 
+        mensaje = "El precio final a pagar es:  "
+        precio = 15000
+        
+        
+        match estacion:
+            case "Invierno":
+                match destino:
+                    case 'Bariloche':
+                        porcentaje = 1.20
+                        mensaje += "con aumento "
+                    case 'Cataratas' | 'Cordoba':
+                        porcentaje = 0.9
+                        mensaje += "con descuento "
+                    case 'Mar del plata':
+                        porcentaje = 0.8
+                        mensaje += "con descuento "
+            case "Verano":
+                match destino:
+                    case 'Bariloche':
+                        porcentaje = 0.8
+                        mensaje += "con descuento "
+                    case 'Cataratas' | 'Cordoba':
+                        porcentaje = 1.1
+                        mensaje += "con aumento "
+                    case 'Mar del plata':
+                        porcentaje = 1.2
+                        mensaje += "con aumento "
+            case "Primavera" | "Otoño":
+                match destino:
+                    case 'Bariloche':
+                        porcentaje = 1.1
+                        mensaje += "con aumento "
+                    case 'Cataratas':
+                        porcentaje = 1.1
+                        mensaje += "con aumento "
+                    case 'Mar del plata':
+                        porcentaje = 1.1
+                        mensaje += "con aumento "
+                    case 'Cordoba':
+                        porcentaje = 1
+                        mensaje += "sin descuento"
+
+    
+        precio_total = precio * porcentaje 
+ 
+        alert("Destino", mensaje + str(precio_total))
+        
+        
     
 if __name__ == "__main__":
     app = App()

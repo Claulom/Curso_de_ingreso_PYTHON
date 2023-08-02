@@ -21,7 +21,14 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        for _ in range(9999): #Utilizar un rango alto
+            salida = prompt("", "Ingrese un número")
+
+            if salida == str(9):
+                alert("", "Ingreso 9, saliendo")
+                break
+        else:
+            salida = prompt("", "Ingrese un número")
         
     
 if __name__ == "__main__":

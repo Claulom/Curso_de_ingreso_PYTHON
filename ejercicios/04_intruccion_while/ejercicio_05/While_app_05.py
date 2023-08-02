@@ -25,9 +25,12 @@ class App(customtkinter.CTk):
         
     
     def btn_validar_letra_on_click(self):
-        pass
+        letra = prompt("", "Ingrese una letra")
             
-    
+        while letra != "U" and letra != "T" and letra != "N":
+            alert("", "Escriba nuevamente en Mayús")
+            letra = prompt("", "Re Ingrese una letra")
+
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")

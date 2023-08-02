@@ -22,7 +22,17 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        cantidad_numeros_divisores = 0
+
+        numeros = prompt("", "Ingrese un número")
+        numeros_int = int(numeros)
+
+        for i in range(1, numeros_int, 1): 
+            if numeros_int % i == 0:
+                cantidad_numeros_divisores += 1
+                print("Los numeros divisores de", str(numeros), "son: ", i)
+              
+        print("","La cantidad de numeros total es:", str(cantidad_numeros_divisores) )
         
     
 if __name__ == "__main__":

@@ -31,10 +31,32 @@ class App(customtkinter.CTk):
 
 
     def btn_comenzar_ingreso_on_click(self):
-        pass
+        acumulador = 0
+        contador = 0
+        
 
+        while contador < 5:
+            ingreso = int(prompt("Numero", " Ingrese un numero"))#Solicito el numero
+            if ingreso == 0:
+                break
+            contador += 1#Cuenta una vuelta
+            acumulador += ingreso#Acumulo el ingreso del usuario,lo voy sumando
+
+        promedio = acumulador / contador
+        self.txt_suma_acumulada.delete(0, 100)#borro lo que tengo en el imput
+        self.txt_suma_acumulada.insert(0, acumulador)#agrego lo que ACUMULE en el imput suma
+        self.txt_promedio.delete(0, 100)
+        self.txt_promedio.insert(0, promedio)
     
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")
     app.mainloop()
+
+
+    """ def isfloat(num):
+    try:
+        float(num)
+        return True
+    except ValueError:
+        return False """

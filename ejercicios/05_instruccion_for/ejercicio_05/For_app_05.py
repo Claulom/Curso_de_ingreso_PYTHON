@@ -22,7 +22,13 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        for _ in range(9999): #Utilizar un rango alto
+            salida = question("", "¿Desea continuar?")
+
+            if salida == False:
+                alert("", "Ingreso No, saliendo")
+                break
+        
         
     
 if __name__ == "__main__":

@@ -5,6 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
+Nombre: Claudio
+Apellido: Lombao
 Todas las lámparas están  al mismo precio de $800 pesos final.
 		A.	Si compra 6 o más  lamparitas bajo consumo tiene un descuento del 50%. 
 		B.	Si compra 5  lamparitas bajo consumo marca "ArgentinaLuz" se hace un descuento del 40 % y si es de otra marca el descuento es del 30%.
@@ -38,8 +40,90 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
+        precio = 800
+        cantidad = int(self.combobox_cantidad.get())
+        proveedor = self.combobox_marca.get()
+        precio_total = precio * cantidad
+        precio_final = precio_total * 0.5      
+
+        """
+        PRECIO = 800
+        descuento = 0
+        mensaje = ""
+
+        cantidad = int(self.combobox_cantidad.get())
+        proveedor = self.combobox_marca.get()
+        precio_total = precio * cantidad
+        precio_final = precio_total * descuento 
         
+        if cantidad >= 6:
+            descuento = 50
+        elif cantidad == 5:
+        descuento = 30
+        if proveedor == "ArgentinaLuz"
+            descuento = 40
+        elif cantidad == 4:
+            descuento = 20
+            if proveedor == "ArgentinaLuz" or proveedor == "FelipeLamparas"
+            descuento = 25
+            elif cantidad == 3:
+            descuento = 5
+            if proveedor == "ArgentinaLuz"
+            descuento = 15
+            elif proveedor == "FelipeLamparas"
+            descuento = 10
+
+            descParaAplicar = precio_total * descuento / 100
+            precioConDesc = precio_total - descParaAplicar  
+            
+            
+            
+            SALIDA
+            alert("Recibo", mensaje)
+           """
+
+
+        if  cantidad >= 6:
+                descuento_50 = precio_total * 0.5
+                alert("Hola", "Usted tiene un descuento del 50% por haber comprado 6 o más lamparitas, el total es $" + str(descuento_50))
+        #elif cantidad == 3 or cantidad == 5 and proveedor == "ArgentinaLuz":
+        elif cantidad == 5 and proveedor == "ArgentinaLuz":
+                descuento_40 = precio_total * 0.4
+                alert("Hola", "Usted tiene un descuento del 40% por haber comprado 5 lamparitas de ArgentinaLuz, el total es $" + str(descuento_40))
+
+        elif cantidad == 5 and proveedor != "ArgentinaLuz":
+                descuento_30 = precio_total * 0.3
+                alert("Hola", "Usted tiene un descuento del 30% por haber comprado 5 lamparitas, el total es $" + str(descuento_30))
+
+        elif cantidad == 4 and proveedor == "ArgentinaLuz" or proveedor == "FelipeLamparas":
+                descuento_25 = precio_total * 0.25
+                alert ("Hola", "Usted tiene un descuento del 25% por haber comprado 4 lamparitas, el total es $" + str(descuento_25))
+
+        elif cantidad == 4 and proveedor != "ArgentinaLuz" or proveedor != "FelipeLamparas":
+                descuento_20 = precio_total * 0.2
+                alert ("Hola", "Usted tiene un descuento del 20% por haber comprado 4 lamparitas, el total es $" + str(descuento_20))
+
+        elif cantidad == 3 and proveedor == "ArgentinaLuz":
+                descuento_15 = precio_total * 0.15 
+                alert ("Hola", "Usted tiene un descuento del 15% por haber comprado 3 lamparitas, el total es $" + str(descuento_15))
+
+        elif cantidad == 3 and proveedor == "FelipeLamparas":
+                descuento_10 = precio_total * 0.1 
+                alert ("Hola", "Usted tiene un descuento del 15% por haber comprado 3 lamparitas, el total es $" + str(descuento_10))
+
+        elif cantidad == 3 and proveedor != "ArgentinaLuz" or proveedor != "FelipeLamparas":
+                descuento_5 = precio_total * 0.05
+                alert ("Hola", "Usted tiene un descuento del 5% por haber comprado 3 lamparitas, el total es $" + str(descuento_5)) 
+
+        if precio_final >= 4000:
+                descuento_5 = precio_total * 0.05
+                desc_55 = precio_final + descuento_5
+                alert("Hola", "Tenes un decuento adicional, tu total es" + str(desc_55))
+
+        """ elif cantidad >= 6 and precio_total >= 8000:
+            descuento_55 = precio_total + 4000 * 0.55
+            alert("Hola", "Usted tiene un descuento del 50% por haber comprado 6 o más lamparitas, el total es $" + str(descuento_55))  """
+            
     
 if __name__ == "__main__":
     app = App()

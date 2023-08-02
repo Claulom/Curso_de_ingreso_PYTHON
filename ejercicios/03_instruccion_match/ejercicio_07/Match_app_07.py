@@ -1,4 +1,4 @@
-import tkinter
+""" import tkinter """
 from tkinter.messagebox import showinfo as alert
 from tkinter.messagebox import askyesno as question
 from tkinter.simpledialog import askstring as prompt
@@ -6,6 +6,8 @@ import customtkinter
 
 
 '''
+nombre:Claudio
+Apellido:Lombao
 Enunciado:
 Obtener el destino seleccionado en el combobox_destino, luego al presionar el 
 botón ‘Informar’ indicar el punto cardinal de nuestro país donde se encuentra: 
@@ -29,7 +31,18 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
-        pass
+        destino = self.combobox_destino.get()
+        mensaje = ""
+        match destino:
+            case 'Cataratas':
+                mensaje += "Norte"
+            case 'Ushuaia':
+                mensaje += "Sur"
+            case 'Mar del plata':
+                mensaje += "este"
+            case 'Bariloche':
+                mensaje += "oeste" 
+        alert("Dirección", mensaje)   
     
     
 if __name__ == "__main__":

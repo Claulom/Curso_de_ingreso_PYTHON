@@ -24,7 +24,13 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
+        numeros_lista = self.lista_datos
+        suma_numeros = 0
+
+        for numero in numeros_lista: 
+            suma_numeros += numero
+
+        alert("", "El numero minimo es:" + str(suma_numeros)) #Claudio en las sumatorias el alert al final fuera del bucleeeeee
     
 if __name__ == "__main__":
     app = App()

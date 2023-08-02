@@ -30,6 +30,7 @@ class App(customtkinter.CTk):
 
     def btn_mostrar_on_click(self):
         pass
+        alert(title="Alert", message="Esto no anda, Funciona")#Esto seria lo que se muestra en el alert
 
 
 if __name__ == "__main__":

@@ -42,7 +42,10 @@ class App(customtkinter.CTk):
 
     def btn_mostrar_on_click(self):
         pass
-
+        nombre = self.txt_nombre.get()
+        edad = self.txt_edad.get()
+        saludos = "Hola como estás {0}, tu edad es {1} años?".format(nombre, edad)
+        alert(title="Saludos", message= saludos)
 
         
         
